@@ -2,8 +2,14 @@
     ViewBag.Title = "Home Page";
 }
 
-<h2>Racuni</h2>
-<table id="racuni" class = "table table-bordered table-hover">
+<h2>Dnevni izvestaj</h2>
+<hr />
+<h4>Ukupan prihod:</h4>
+<h5 style="color: red">value</h5>
+<h4>Zarada:</h4>
+<h5 style="color: red">value</h5>
+<hr />
+<table id="racuni" class="table table-bordered table-hover">
     <thead>
         <tr class="info">
             <th>Id racuna</th>
@@ -17,37 +23,38 @@
     <tbody></tbody>
 </table>
 
-    @section scripts
+@section scripts
     {
-        <script>
-            $(document).ready(function () {
-                var table = $("#racuni").dataTable({
-                    ajax: {
-                        url: "http://localhost:49788/api/Racunis",
-                        dataSrc: ""
+    <script>
+        $(document).ready(function () {
+            
+            var table = $("#racuni").dataTable({
+                ajax: {
+                    url: "http://localhost:49788/api/Racunis/1",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "id_racuna"
                     },
-                    columns: [
-                        {
-                            data: "id_racuna"
-                        },
-                        {
-                            data: "prodavac"
-                        },
-                        {
-                            data: "artikli"
-                        },
-                        {
-                            data: "datum_izdavanja"
-                        },
-                        {
-                            data: "iznos"
-                        },
-                        {
-                            data: "iznos_nabavna"
-                        }
-                     
-                    ]
-                });
+                    {
+                        data: "prodavac"
+                    },
+                    {
+                        data: "artikli"
+                    },
+                    {
+                        data: "datum_izdavanja"
+                    },
+                    {
+                        data: "iznos"
+                    },
+                    {
+                        data: "iznos_nabavna"
+                    }
+
+                ]
             });
-        </script>
-    }
+        });
+    </script>
+}

@@ -17,22 +17,69 @@ namespace MB_Web.Controllers.api
         private Mobile_TownEntities db = new Mobile_TownEntities();
 
         // GET: api/Racunis
-        public IQueryable<Racuni> GetRacunis()
+        //public IQueryable<Racuni> GetRacunis()
+        //{
+        //    return db.Racunis;
+        //}
+        
+        public IHttpActionResult GetRacunis()
         {
-            return db.Racunis;
+            DateTime dt = DateTime.Now;
+            var dnevni_pazar = db.Racunis
+            .Where(r => r.datum_izdavanja.Year == dt.Year 
+            && r.datum_izdavanja.Month == dt.Month
+            && r.datum_izdavanja.Day == dt.Day);
+
+            return Ok(dnevni_pazar);
         }
 
         // GET: api/Racunis/5
+        //[ResponseType(typeof(Racuni))]
+        //public IHttpActionResult GetRacuni(int id)
+        //{
+        //    Racuni racuni = db.Racunis.Find(id);
+        //    if (racuni == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(racuni);
+        //}
+
         [ResponseType(typeof(Racuni))]
         public IHttpActionResult GetRacuni(int id)
         {
-            Racuni racuni = db.Racunis.Find(id);
-            if (racuni == null)
-            {
-                return NotFound();
-            }
+            DateTime dt = DateTime.Now;
 
-            return Ok(racuni);
+            Racuni racuni = new Racuni();
+
+            if(id == 1)
+            {
+                var dnevni = db.Racunis
+                    .Where(r => r.datum_izdavanja.Year == dt.Year
+                        && r.datum_izdavanja.Month == dt.Month
+                        && r.datum_izdavanja.Day == dt.Day);
+                return Ok(dnevni);
+             
+            }
+            else if(id == 2)
+            {
+                var mesecni = db.Racunis
+                    .Where(r => r.datum_izdavanja.Year == dt.Year
+                        && r.datum_izdavanja.Month == dt.Month);
+                return Ok(mesecni);
+            }
+            else if(id == 3)
+            {
+                var godisnji = db.Racunis
+                    .Where(r => r.datum_izdavanja.Year == dt.Year);
+                return Ok(godisnji);
+            }
+            else
+            {
+                return Ok(racuni);
+            }
+            
         }
 
         // PUT: api/Racunis/5

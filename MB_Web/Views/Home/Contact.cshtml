@@ -1,17 +1,56 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Godisnji izvestaj</h2>
+<hr />
+<h4>Ukupan prihod:</h4> <h5 style="color: red">value</h5>
+<h4>Zarada:</h4> <h5 style="color: red">value</h5>
+<hr />
+<table id="racuni" class="table table-bordered table-hover">
+    <thead>
+        <tr class="info">
+            <th>Id racuna</th>
+            <th>Prodavac</th>
+            <th>Artikli</th>
+            <th>Datum izdavanja</th>
+            <th>Iznos racuna</th>
+            <th>Iznos racuna - nabavna</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@section scripts
+    {
+    <script>
+            $(document).ready(function () {
+                var table = $("#racuni").dataTable({
+                    ajax: {
+                        url: "http://localhost:49788/api/Racunis/3",
+                        dataSrc: ""
+                    },
+                    columns: [
+                        {
+                            data: "id_racuna"
+                        },
+                        {
+                            data: "prodavac"
+                        },
+                        {
+                            data: "artikli"
+                        },
+                        {
+                            data: "datum_izdavanja"
+                        },
+                        {
+                            data: "iznos"
+                        },
+                        {
+                            data: "iznos_nabavna"
+                        }
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+                    ]
+                });
+            });
+    </script>
+}
