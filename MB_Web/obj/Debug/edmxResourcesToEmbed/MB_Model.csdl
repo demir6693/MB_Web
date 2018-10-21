@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Mobile_TownModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Artikli">
+    <Key>
+      <PropertyRef Name="sifra" />
+    </Key>
+    <Property Name="sifra" Type="Int32" Nullable="false" />
+    <Property Name="grupa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="artikal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+    <Property Name="nabavna_cena" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="prodajna_cena" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artikli_knjizeno">
+    <Key>
+      <PropertyRef Name="sifra" />
+    </Key>
+    <Property Name="sifra" Type="Int32" Nullable="false" />
+    <Property Name="grupa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="artikal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+    <Property Name="nabavna_cena" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="prodajna_cena" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dug">
+    <Key>
+      <PropertyRef Name="id_duga" />
+    </Key>
+    <Property Name="id_duga" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime_prezime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="broj_telefona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="datum_izdavanja" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="datum_vracanja" Type="DateTime" Precision="0" />
+    <Property Name="sifra_artikla" Type="Int32" />
+    <Property Name="artikal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cena" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="knjizeno" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Korisnici">
+    <Key>
+      <PropertyRef Name="id_korisnika" />
+    </Key>
+    <Property Name="id_korisnika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="korisnicko_ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sifra" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nivo" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mob_hover">
+    <Key>
+      <PropertyRef Name="sifra" />
+    </Key>
+    <Property Name="sifra" Type="Int32" Nullable="false" />
+    <Property Name="grupa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="artikal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+    <Property Name="nabavna_cena" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="prodajna_cena" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="mob_hover_knjizeno">
+    <Key>
+      <PropertyRef Name="sifra" />
+    </Key>
+    <Property Name="sifra" Type="Int32" Nullable="false" />
+    <Property Name="grupa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="artikal" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+    <Property Name="nabavna_cena" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="prodajna_cena" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Narudzbine">
+    <Key>
+      <PropertyRef Name="id_narudzbine" />
+    </Key>
+    <Property Name="id_narudzbine" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ime_prezime" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="broj_telefona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="opis_narudzbine" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Racuni">
+    <Key>
+      <PropertyRef Name="id_racuna" />
+    </Key>
+    <Property Name="id_racuna" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prodavac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datum_izdavanja" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="artikli" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="iznos" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="iznos_nabavna" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Racuni_hover_mob">
+    <Key>
+      <PropertyRef Name="id_racuna" />
+    </Key>
+    <Property Name="id_racuna" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="prodavac" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datum_izdavanja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="artikal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="iznos" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="iznos_nabavna" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="knjizeno" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Racuni_knjizeno">
+    <Key>
+      <PropertyRef Name="id_racuna" />
+    </Key>
+    <Property Name="id_racuna" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="artikli" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="datum_izdavanja" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="iznos" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="iznos_nabavna" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Rezervacija">
+    <Key>
+      <PropertyRef Name="id_rezervacija" />
+    </Key>
+    <Property Name="id_rezervacija" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sifra_artikla" Type="Int32" Nullable="false" />
+    <Property Name="knjizeno" Type="Int32" Nullable="false" />
+    <Property Name="ime_prezime" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="broj_telefona" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="artikal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cena" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Servi">
+    <Key>
+      <PropertyRef Name="id_servisa" />
+    </Key>
+    <Property Name="id_servisa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="serviser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="datum_preuzimanja" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ime_prezime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="broj_telefona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="opis_kvara" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cena_popravke" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="cena_naplate" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="Mobile_TownEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Artiklis" EntityType="Self.Artikli" />
+    <EntitySet Name="Artikli_knjizeno" EntityType="Self.Artikli_knjizeno" />
+    <EntitySet Name="Dugs" EntityType="Self.Dug" />
+    <EntitySet Name="Korisnicis" EntityType="Self.Korisnici" />
+    <EntitySet Name="mob_hover" EntityType="Self.mob_hover" />
+    <EntitySet Name="mob_hover_knjizeno" EntityType="Self.mob_hover_knjizeno" />
+    <EntitySet Name="Narudzbines" EntityType="Self.Narudzbine" />
+    <EntitySet Name="Racunis" EntityType="Self.Racuni" />
+    <EntitySet Name="Racuni_hover_mob" EntityType="Self.Racuni_hover_mob" />
+    <EntitySet Name="Racuni_knjizeno" EntityType="Self.Racuni_knjizeno" />
+    <EntitySet Name="Rezervacijas" EntityType="Self.Rezervacija" />
+    <EntitySet Name="Servis" EntityType="Self.Servi" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Racuni</h2>
+<table id="racuni" class = "table table-bordered table-hover">
+    <thead>
+        <tr class="info">
+            <th>Id racuna</th>
+            <th>Prodavac</th>
+            <th>Artikli</th>
+            <th>Datum izdavanja</th>
+            <th>Iznos racuna</th>
+            <th>Iznos racuna - nabavna</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+    @section scripts
+    {
+        <script>
+            $(document).ready(function () {
+                var table = $("#racuni").dataTable({
+                    ajax: {
+                        url: "http://localhost:49788/api/Racunis",
+                        dataSrc: ""
+                    },
+                    columns: [
+                        {
+                            data: "id_racuna"
+                        },
+                        {
+                            data: "prodavac"
+                        },
+                        {
+                            data: "artikli"
+                        },
+                        {
+                            data: "datum_izdavanja"
+                        },
+                        {
+                            data: "iznos"
+                        },
+                        {
+                            data: "iznos_nabavna"
+                        }
+                     
+                    ]
+                });
+            });
+        </script>
+    }

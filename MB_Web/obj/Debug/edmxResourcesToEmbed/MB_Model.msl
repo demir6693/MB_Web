@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Mobile_TownModelStoreContainer" CdmEntityContainer="Mobile_TownEntities">
+    <EntitySetMapping Name="Artiklis">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Artikli">
+        <MappingFragment StoreEntitySet="Artikli">
+          <ScalarProperty Name="sifra" ColumnName="sifra" />
+          <ScalarProperty Name="grupa" ColumnName="grupa" />
+          <ScalarProperty Name="artikal" ColumnName="artikal" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="nabavna_cena" ColumnName="nabavna_cena" />
+          <ScalarProperty Name="prodajna_cena" ColumnName="prodajna_cena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artikli_knjizeno">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Artikli_knjizeno">
+        <MappingFragment StoreEntitySet="Artikli_knjizeno">
+          <ScalarProperty Name="sifra" ColumnName="sifra" />
+          <ScalarProperty Name="grupa" ColumnName="grupa" />
+          <ScalarProperty Name="artikal" ColumnName="artikal" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="nabavna_cena" ColumnName="nabavna_cena" />
+          <ScalarProperty Name="prodajna_cena" ColumnName="prodajna_cena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dugs">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Dug">
+        <MappingFragment StoreEntitySet="Dug">
+          <ScalarProperty Name="id_duga" ColumnName="id_duga" />
+          <ScalarProperty Name="ime_prezime" ColumnName="ime_prezime" />
+          <ScalarProperty Name="broj_telefona" ColumnName="broj_telefona" />
+          <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
+          <ScalarProperty Name="datum_vracanja" ColumnName="datum_vracanja" />
+          <ScalarProperty Name="sifra_artikla" ColumnName="sifra_artikla" />
+          <ScalarProperty Name="artikal" ColumnName="artikal" />
+          <ScalarProperty Name="cena" ColumnName="cena" />
+          <ScalarProperty Name="knjizeno" ColumnName="knjizeno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisnicis">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Korisnici">
+        <MappingFragment StoreEntitySet="Korisnici">
+          <ScalarProperty Name="id_korisnika" ColumnName="id_korisnika" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
+          <ScalarProperty Name="sifra" ColumnName="sifra" />
+          <ScalarProperty Name="nivo" ColumnName="nivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mob_hover">
+      <EntityTypeMapping TypeName="Mobile_TownModel.mob_hover">
+        <MappingFragment StoreEntitySet="mob_hover">
+          <ScalarProperty Name="sifra" ColumnName="sifra" />
+          <ScalarProperty Name="grupa" ColumnName="grupa" />
+          <ScalarProperty Name="artikal" ColumnName="artikal" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="nabavna_cena" ColumnName="nabavna_cena" />
+          <ScalarProperty Name="prodajna_cena" ColumnName="prodajna_cena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mob_hover_knjizeno">
+      <EntityTypeMapping TypeName="Mobile_TownModel.mob_hover_knjizeno">
+        <MappingFragment StoreEntitySet="mob_hover_knjizeno">
+          <ScalarProperty Name="sifra" ColumnName="sifra" />
+          <ScalarProperty Name="grupa" ColumnName="grupa" />
+          <ScalarProperty Name="artikal" ColumnName="artikal" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="nabavna_cena" ColumnName="nabavna_cena" />
+          <ScalarProperty Name="prodajna_cena" ColumnName="prodajna_cena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Narudzbines">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Narudzbine">
+        <MappingFragment StoreEntitySet="Narudzbine">
+          <ScalarProperty Name="id_narudzbine" ColumnName="id_narudzbine" />
+          <ScalarProperty Name="ime_prezime" ColumnName="ime_prezime" />
+          <ScalarProperty Name="broj_telefona" ColumnName="broj_telefona" />
+          <ScalarProperty Name="opis_narudzbine" ColumnName="opis_narudzbine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Racunis">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Racuni">
+        <MappingFragment StoreEntitySet="Racuni">
+          <ScalarProperty Name="id_racuna" ColumnName="id_racuna" />
+          <ScalarProperty Name="prodavac" ColumnName="prodavac" />
+          <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
+          <ScalarProperty Name="artikli" ColumnName="artikli" />
+          <ScalarProperty Name="iznos" ColumnName="iznos" />
+          <ScalarProperty Name="iznos_nabavna" ColumnName="iznos_nabavna" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Racuni_hover_mob">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Racuni_hover_mob">
+        <MappingFragment StoreEntitySet="Racuni_hover_mob">
+          <ScalarProperty Name="id_racuna" ColumnName="id_racuna" />
+          <ScalarProperty Name="prodavac" ColumnName="prodavac" />
+          <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
+          <ScalarProperty Name="artikal" ColumnName="artikal" />
+          <ScalarProperty Name="iznos" ColumnName="iznos" />
+          <ScalarProperty Name="iznos_nabavna" ColumnName="iznos_nabavna" />
+          <ScalarProperty Name="knjizeno" ColumnName="knjizeno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Racuni_knjizeno">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Racuni_knjizeno">
+        <MappingFragment StoreEntitySet="Racuni_knjizeno">
+          <ScalarProperty Name="id_racuna" ColumnName="id_racuna" />
+          <ScalarProperty Name="artikli" ColumnName="artikli" />
+          <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
+          <ScalarProperty Name="iznos" ColumnName="iznos" />
+          <ScalarProperty Name="iznos_nabavna" ColumnName="iznos_nabavna" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rezervacijas">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Rezervacija">
+        <MappingFragment StoreEntitySet="Rezervacija">
+          <ScalarProperty Name="id_rezervacija" ColumnName="id_rezervacija" />
+          <ScalarProperty Name="sifra_artikla" ColumnName="sifra_artikla" />
+          <ScalarProperty Name="knjizeno" ColumnName="knjizeno" />
+          <ScalarProperty Name="ime_prezime" ColumnName="ime_prezime" />
+          <ScalarProperty Name="broj_telefona" ColumnName="broj_telefona" />
+          <ScalarProperty Name="artikal" ColumnName="artikal" />
+          <ScalarProperty Name="cena" ColumnName="cena" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servis">
+      <EntityTypeMapping TypeName="Mobile_TownModel.Servi">
+        <MappingFragment StoreEntitySet="Servis">
+          <ScalarProperty Name="id_servisa" ColumnName="id_servisa" />
+          <ScalarProperty Name="serviser" ColumnName="serviser" />
+          <ScalarProperty Name="datum_preuzimanja" ColumnName="datum_preuzimanja" />
+          <ScalarProperty Name="ime_prezime" ColumnName="ime_prezime" />
+          <ScalarProperty Name="broj_telefona" ColumnName="broj_telefona" />
+          <ScalarProperty Name="opis_kvara" ColumnName="opis_kvara" />
+          <ScalarProperty Name="cena_popravke" ColumnName="cena_popravke" />
+          <ScalarProperty Name="cena_naplate" ColumnName="cena_naplate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
