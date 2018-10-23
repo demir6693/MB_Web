@@ -213,6 +213,7 @@
       <DependentUpon>MB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\KorisnicisController.cs" />
     <Compile Include="Controllers\api\RacunisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -240,6 +241,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MB_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810231335032_initial.cs" />
+    <Compile Include="Migrations\201810231335032_initial.Designer.cs">
+      <DependentUpon>201810231335032_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="mob_hover.cs">
       <DependentUpon>MB_Model.tt</DependentUpon>
     </Compile>
@@ -488,7 +494,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -525,8 +533,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Izvestaji\" />
-    <Folder Include="Views\Sum\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -543,6 +549,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810231335032_initial.resx">
+      <DependentUpon>201810231335032_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

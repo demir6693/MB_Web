@@ -124,3 +124,5 @@ C:\Users\demir\source\repos\MB_Web\MB_Web\bin\System.Net.Http.Formatting.xml
 C:\Users\demir\source\repos\MB_Web\MB_Web\bin\System.Web.Http.xml
 C:\Users\demir\source\repos\MB_Web\MB_Web\bin\System.Web.Http.WebHost.xml
 C:\Users\demir\source\repos\MB_Web\MB_Web\obj\Debug\MB_Web.csprojAssemblyReference.cache
+C:\Users\demir\source\repos\MB_Web\MB_Web\obj\Debug\MB_Web.Migrations.initial.resources
+C:\Users\demir\source\repos\MB_Web\MB_Web\obj\Debug\MB_Web.csproj.GenerateResource.cache
