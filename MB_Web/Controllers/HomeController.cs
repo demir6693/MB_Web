@@ -6,8 +6,9 @@ using System.Web.Mvc;
 
 namespace MB_Web.Controllers
 {
+    
     public class HomeController : Controller
-    {
+    {   
         public ActionResult Index()
         {
             return View();
@@ -15,14 +16,21 @@ namespace MB_Web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Mesecni";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Godisnji";
+
+            return View();
+        }
+
+        public ActionResult korisnici()
+        {
+            ViewBag.Message = "Korisnici";
 
             return View();
         }

@@ -20,5 +20,6 @@ namespace MB_Web
         public string korisnicko_ime { get; set; }
         public string sifra { get; set; }
         public int nivo { get; set; }
+        public Nullable<decimal> bonus { get; set; }
     }
 }

@@ -17,9 +17,9 @@ namespace MB_Web.Controllers.api
         private Mobile_TownEntities db = new Mobile_TownEntities();
 
         // GET: api/Korisnicis
-        public IQueryable<Korisnici> GetKorisnicis()
+        public IEnumerable<Korisnici> GetKorisnicis()
         {
-            return db.Korisnicis;
+            return db.Korisnicis.ToArray();
         }
 
         // GET: api/Korisnicis/5

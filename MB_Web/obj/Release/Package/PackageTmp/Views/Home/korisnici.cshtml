@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "korisnici";
+}
+
+<h2>Korisnici</h2>
+@*https://mobiletown.azurewebsites.net/api/Korisnicis*@
+<hr />
+<table id="tabela_korisnici" class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>Id</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Bonus</th>
+            <th>Unesi</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            
+            $("#tabela_korisnici").dataTable({
+                ajax: {
+                    url: "https://mobiletown.azurewebsites.net/api/Korisnicis",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "id_korisnika"
+                    },
+                    {
+                        data: "ime"
+                    },
+                    {
+                        data: "prezime"
+                    },
+                    {
+                        data: "bonus",
+                        render: function (data, type, korisnik) {
+
+                            return "<input id='" + korisnik.id_korisnika + "' style='text-align: center' value='" + korisnik.bonus + "'>";
+                        }
+                    },
+                    {
+                        data: "id_korisnika",
+                        render: function (data) {
+                            return "<button class='btn btn-primary js-put' data-id=" + data + ">Unesi</button>";
+                        }
+                    }
+
+                ]
+            });
+
+        });
+    </script>
+
+    <script>
+        $("#tabela_korisnici").on("click", ".js-put", function () {
+            var button = $(this);
+            var korisnik;
+
+            $.ajax({
+                url: "https://mobiletown.azurewebsites.net/api/Korisnicis/" + button.attr("data-id"),
+                method: "GET",
+                dataType: "json",
+                success: function (data) {
+
+                    var new_value = $("#" + data.id_korisnika).val();
+
+                    data.bonus = new_value;
+
+                    $.ajax({
+                        type: "PUT",
+                        url: "https://mobiletown.azurewebsites.net/api/Korisnicis/" + button.attr("data-id"),
+                        data: data,
+                        success: function () {
+                            console.log("uradjeno");
+                        },
+                        error: function (xhr, textStatus, errorThrow) {
+                            console.log(textStatus);
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+}

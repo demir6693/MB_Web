@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>Godisnji izvestaj</h2>
+<hr />
+<h4>Ukupan prihod:</h4>
+<h5 style="color: red" id="prihod"></h5>
+<h4>Zarada:</h4>
+<h5 style="color: red" id="zarada"></h5>
+<hr />
+<table id="racuni" class="table table-bordered table-hover">
+    <thead>
+        <tr class="info">
+            <th>Id racuna</th>
+            <th>Prodavac</th>
+            <th>Artikli</th>
+            <th>Datum izdavanja</th>
+            <th>Iznos racuna</th>
+            <th>Iznos racuna - nabavna</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@section scripts
+    {
+    <script>
+        $(document).ready(function () {
+            var table = $("#racuni").dataTable({
+                ajax: {
+                    url: "http://localhost:49788/api/Racunis/3",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "id_racuna"
+                    },
+                    {
+                        data: "prodavac"
+                    },
+                    {
+                        data: "artikli"
+                    },
+                    {
+                        data: "datum_izdavanja"
+                    },
+                    {
+                        data: "iznos"
+                    },
+                    {
+                        data: "iznos_nabavna"
+                    }
+
+                ]
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var sum_nabavna = 0;
+            var sum_prodajna = 0;
+            $.ajax({
+                url: "http://localhost:49788/api/Racunis/3",
+                type: 'GET',
+                dataType: 'json',
+                success: function (data, textStatus, xhr) {
+                    $.each(data, function (index, value) {
+                        sum_prodajna = sum_prodajna + value.iznos;
+                        sum_nabavna = sum_nabavna + value.iznos_nabavna;
+                    });
+
+                    $("#prihod").text(sum_prodajna + " din");
+                    $("#zarada").text(sum_prodajna - sum_nabavna + " din");
+                },
+                error: function (xhr, textStatus, errorThrow) {
+                    console.log("error");
+                }
+            });
+        });
+    </script>
+}

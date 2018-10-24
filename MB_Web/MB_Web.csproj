@@ -212,12 +212,34 @@
     <Compile Include="Artikli_knjizeno.cs">
       <DependentUpon>MB_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>MB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>MB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>MB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>MB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BuildVersion.cs">
+      <DependentUpon>MB_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\api\KorisnicisController.cs" />
     <Compile Include="Controllers\api\RacunisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KorisniciController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>MB_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Dug.cs">
+      <DependentUpon>MB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorLog.cs">
       <DependentUpon>MB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -244,6 +266,10 @@
     <Compile Include="Migrations\201810231335032_initial.cs" />
     <Compile Include="Migrations\201810231335032_initial.Designer.cs">
       <DependentUpon>201810231335032_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810241200167_bonus.cs" />
+    <Compile Include="Migrations\201810241200167_bonus.Designer.cs">
+      <DependentUpon>201810241200167_bonus.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="mob_hover.cs">
@@ -275,6 +301,9 @@
       <DependentUpon>MB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Table.cs">
+      <DependentUpon>MB_Model.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-paper.css" />
@@ -419,6 +448,8 @@
     </Content>
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\mobiletown - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -530,6 +561,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\korisnici.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -553,6 +585,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810231335032_initial.resx">
       <DependentUpon>201810231335032_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810241200167_bonus.resx">
+      <DependentUpon>201810241200167_bonus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

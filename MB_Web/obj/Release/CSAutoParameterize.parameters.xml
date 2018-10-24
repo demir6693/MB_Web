@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=mobiletownserver.database.windows.net;Initial Catalog=Mobile_Town;User ID=demir6693;Password=Agovic6693;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\demir\\source\\repos\\MB_Web\\MB_Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="Mobile_TownEntities-Web.config Connection String" description="Mobile_TownEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/MB_Model.csdl|res://*/MB_Model.ssdl|res://*/MB_Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=mobiletownserver.database.windows.net;initial catalog=Mobile_Town;persist security info=True;user id=demir6693;password=Agovic6693;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\demir\\source\\repos\\MB_Web\\MB_Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Mobile_TownEntities']/@connectionString" />
+  </parameter>
+</parameters>
